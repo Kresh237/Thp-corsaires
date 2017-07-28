@@ -30,7 +30,7 @@ class CorsairesController < ApplicationController
 
   		 redirect_to @corsaire
   end
-  
+
 =begin
   def destroy
 		@corsaire = Corsaire.find(params[:id])
