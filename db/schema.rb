@@ -23,15 +23,4 @@ ActiveRecord::Schema.define(version: 20170728103230) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "corsairs", force: :cascade do |t|
-    t.string "first_name"
-    t.integer "age"
-    t.string "likeness"
-    t.string "bio"
-    t.string "slack_handle"
-    t.string "github_handle"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

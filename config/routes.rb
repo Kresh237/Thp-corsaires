@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  get 'corsaires', to: 'corsaires#index'
+  resources :corsaires
 
-  get 'corsaires/new', to: 'corsaires#new'
-
-  get 'corsaires/show', to: 'corsaires#show'
-
-  get 'corsaires/edit', to: 'corsaires#edit'
 
 
 

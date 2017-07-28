@@ -1,2 +1,20 @@
-<h1>Corsaires#index</h1>
-<p>Find me in app/views/corsaires/index.html.erb</p>
+<h1>All the corsaires</h1>
+
+
+<table>
+  <tbody>
+    <% @corsaires.each do |corsaire| %>
+      <tr>
+        <td><%= corsaire.first_name %></td>
+        <td><%= corsaire.age %></td>
+        <td><%= link_to 'Show', corsaire %></td>
+        <td> || </td>
+        <td><%= link_to 'Edit', edit_corsaire_path(corsaire) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corsaire', new_corsaire_path, class: "btn btn-lg btn-primary" %>
