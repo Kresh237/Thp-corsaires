@@ -10,9 +10,12 @@ class CorsairesController < ApplicationController
   def create
   	@corsaire = Corsaire.new(corsaire_params)
   	if @corsaire.save
+      flash[:success] = "Welcome !"
   		redirect_to @corsaire
   	else
+     flash[:false] = "Try again"
   		render 'new'
+
   end
   end
 
@@ -26,10 +29,14 @@ class CorsairesController < ApplicationController
 
   def update
          @corsaire = Corsaire.find(params[:id])
-  		 @corsaire.update(corsaire_params)
-
+  		 if @corsaire.update(corsaire_params)
+flash[:success] = "Updated!"
   		 redirect_to @corsaire
+      else 
+        flash[:false] = "Try again"
+      render 'edit'
   end
+end
 
 =begin
   def destroy
@@ -42,6 +49,6 @@ class CorsairesController < ApplicationController
 
 private
   def corsaire_params
-  params.require(:corsaire).permit(:first_name, :age)
+  params.require(:corsaire).permit(:first_name, :age, :bio, :slack_handle, :github_handle, :likeness)
   end
 end
